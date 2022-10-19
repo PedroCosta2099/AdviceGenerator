@@ -9,17 +9,16 @@ function App() {
 
   const [advice,setAdvice] = useState([]);
 
-  const handleChange = () => {
+  function handleChange() {
     
     axios.get(`	https://api.adviceslip.com/advice`)
       .then(res => {
           setAdvice(res.data.slip)
-      })
-      ;
+      });
   
   }
 
-    useEffect(() => handleChange,[])
+  useEffect(() =>{handleChange();},[]);
 
   return (
     <div className="App">
